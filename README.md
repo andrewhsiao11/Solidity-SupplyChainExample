@@ -2,16 +2,19 @@
 
 A simple supply chain example implemented on the blockchain. Smart contracts written in Solidity, that allow for automated dispatchment of items upon payment as well as payment collection without a middlemen. 
 
-An owner can create an item and set its cost in Ether. This item then has its own address, where a buyer can sent the appropraite amount of funds to. This will set the status of the item to paid and trigger a
-a notification that it is ready to be delivered. The owner can then trigger the item for dispatch and set its state to deliver.
+- An owner can create an item and set its cost in Ether. 
+- This item then has its own address, where a buyer can send the appropriate amount of funds to. 
+- This will set the status of the item to paid and trigger a notification that it is ready to be delivered. 
+- The owner can then trigger the item for dispatch and set its state to deliver.
 
+Smart Contracts can be inspected and tested in [Remix](http://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js).
 
 
 ## Features
 
 * Smart contracts written in Solidity
 * Utilization of Event-Triggers to interact between UI and blockchain
-* Ownership to give access control to contract functions (based on openzepplin contracts)
+* Ownership to give access control to contract functions (based on [openzepplin contracts](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol))
 * Truffle workflow 
 * Unit testing with Truffle
 * Interaction with Metamask and Truffle development console
