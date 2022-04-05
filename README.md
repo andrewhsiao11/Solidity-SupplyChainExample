@@ -38,7 +38,7 @@ truffle develop
 migrate
 ```
 
-Connect Metamask wallet and set network to Localhost 8545
+* **Connect Metamask wallet and set network to: _Localhost 8545_**
 
 In client folder
 ```bash
