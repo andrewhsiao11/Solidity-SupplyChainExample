@@ -54,7 +54,7 @@ class App extends Component {
     this.itemManager.events
       .SupplyChainStep()
       .on("data", async function (event) {
-        if (event.returnValues._step == 1) {
+        if (event.returnValues._step === 1) {
           let item = await self.itemManager.methods
             .items(event.returnValues._itemIndex)
             .call();
@@ -97,35 +97,63 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <h1>Simple Payment/Supply Chain Example!</h1>
+        <nav
+          className="navbar navbar-light justify-content-md-center"
+          style={{ backgroundColor: "#e3f2fd" }}
+        >
+          <h1>Simple Payment/Supply Chain Example!</h1>
+        </nav>
+
         <h2>Items</h2>
-        <p>{this.state.itemName}</p>
-        <p>Ether: {Web3.utils.fromWei(`${this.state.cost}`, "ether")}</p>
+        <div
+          className="card border-info mb-3 justify-content-md-center container"
+          style={{ maxWidth: "20rem" }}
+        >
+          <div className="card-body">
+            <h5 className="card-title">{this.state.itemName}</h5>
+            <p className="card-text">
+              Ether: {Web3.utils.fromWei(`${this.state.cost}`, "ether")}
+            </p>
+          </div>
+        </div>
 
         <h2>Add Element</h2>
-        <label>
-          Cost in Wei:
-          <input
-            type="text"
-            name="cost"
-            value={this.state.cost}
-            onChange={this.handleInputChange}
-          />
-        </label>
         <br />
+        <div className="container input-group justify-content-md-center">
+          <label className="form-label input-group-text">
+            Cost in Wei:
+            <input
+              type="text"
+              name="cost"
+              value={this.state.cost}
+              onChange={this.handleInputChange}
+              className="form-control"
+            />
+          </label>
+        </div>
+
         <br />
-        <label>
-          Item Name:
-          <input
-            type="text"
-            name="itemName"
-            value={this.state.itemName}
-            onChange={this.handleInputChange}
-          />
-        </label>
-        <button type="button" onClick={this.handleSubmit}>
-          Create new Item
-        </button>
+        <div className="container input-group justify-content-md-center">
+          <label className="form-label input-group-text">
+            Item Name:
+            <input
+              type="text"
+              name="itemName"
+              value={this.state.itemName}
+              onChange={this.handleInputChange}
+              className="form-control"
+            />
+          </label>
+        </div>
+        <div className="container justify-content-md-center">
+          <button
+            type="button"
+            onClick={this.handleSubmit}
+            className="btn btn-outline-primary btn-lg"
+          >
+            Create new Item
+          </button>
+        </div>
       </div>
     );
   }

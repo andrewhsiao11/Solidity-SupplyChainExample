@@ -33,9 +33,13 @@ npm install
 
 In project folder
 ```bash
+(if running Node >= 17) --> export NODE_OPTIONS=--openssl-legacy-provider
 truffle develop
 migrate
 ```
+
+Connect Metamask wallet and set network to Localhost 8545
+
 In client folder
 ```bash
 npm start 
